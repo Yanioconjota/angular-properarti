@@ -14,9 +14,9 @@
 
 			 .state('project', {
 				 url: "/",
-				 templateUrl: "app/partials/home.html"
+				 templateUrl: "partials/home.html"
 			 } )
 
 		} );
-	
+
 })()
