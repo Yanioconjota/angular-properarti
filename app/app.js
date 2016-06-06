@@ -15,8 +15,8 @@
 			 .state('project', {
 				 url: "/",
 				 templateUrl: "partials/home.html"
-			 } )
+			 } );
 
 		} );
 
-})()
+})();

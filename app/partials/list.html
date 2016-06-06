@@ -1,0 +1,106 @@
+<div class="row" ng-controller="listController as lsctrl">
+  <div class="col-xs-12">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+    <h1>Propiedades en Venta en Captial Federal</h1>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="form-group">
+          <select class="form-control" name="" id="">
+            <option value="-1">Ordenar por</option>
+            <option value="0" selected>Relevancia</option>
+            <option value="1">Precio descendente</option>
+            <option value="2">Precio ascendente</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-6 pull-right">
+        <small>244000 propiedades encontradas</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Detalle propiedad-->
+
+    <div ng-repeat="item in lsctrl.inmuebles track by item.id">
+      <div class="row">
+        <div class="col-xs-4">
+          <a href="javascript:void(0)">
+            <img src="/statics/img/mt2000.jpg" alt="" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-xs-11">
+
+                <ul class="list-inline">
+                    <li ng-if="item.price > 0">
+                      <a href="javascript:void(0)">
+                        <span ng-bind-template="{{item.currency_id | currencyChange}}"></span>
+                      </a>
+                    </li>
+                    <li ng-if="item.price > 0">
+                      <a href="javascript:void(0)">
+                        <span ng-bind="item.price"></span>
+                      </a>
+                    </li>
+                    <li ng-if="item.expenses">
+                      <a href="javascript:void(0)">
+                        <span ng-bind="item.expenses"></span>
+                      </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-xs-1">
+              <a href=""><i class="fa fa-star"></i></a></div>
+          </div>
+          <a href="javascript:void(0)" ng-bind="item.address_title"></a>
+          <div class="row">
+            <div class="col-xs-6">
+              <ul class="list-unstyled">
+                <li><a href="javascript:void(0)" ng-bind="item.property_type"></a></li>
+                <li><a href="javascript:void(0)" ng-bind="item.place_name"></a></li>
+                <li><a href="javascript:void(0)" ng-bind="item.published_date"></a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6">
+              <ul class="list-unstyled">
+                <li ng-if="item.surface_total">
+                  <a href="javascript:void(0)" ng-bind-template="{{item.rooms_description}} - {{item.surface_total + 'm2'}}"></a>
+                </li>
+                <li><a href="javascript:void(0)" ng-bind="item.seller_name"></a></li>
+              </ul>
+            </div>
+          </div>
+          <a href="javascript:void(0)">DEPARTAMENTOS EN VENTA EN BARRIO NORTE</a>
+          <div class="row">
+            <div class="col-xs-6">
+              <button class="btn btn-default">Contactar al anunciante</button>
+            </div>
+            <div class="col-xs-6">
+              <a href="javascript:void(0)">Mas Información >></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Detalle propiedad-->
+  </div>
+  <div class="col-sm-6">
+
+  </div>
+</div>

@@ -1,37 +1,38 @@
 ﻿(function(){
 
-	function InmuebleService(httpHelper) 
+	function InmuebleService(httpHelper)
     {
 		var inmuebleService = this;
 		
-        inmuebleService.buscar = function() 
+        inmuebleService.buscar = function()
         {
         	var promise = httpHelper.get('/app/server/properati.txt', {});
-        	promise.then(callbackBuscar);
+					return promise;
+        	//promise.then(callbackBuscar);
         }
-		
+
 		var callbackBuscar = function (data) {
 			console.log(data);
 		}
-		
-		inmuebleService.obtenerPorId = function (id) 
+
+		inmuebleService.obtenerPorId = function (id)
 		{
 			var promise = httpHelper.get('/app/server/uno.txt', {id: id});
         	var resultado = promise.then(function (data) {
         		var uno = data.filter(function(item) {
         			                    return item.id === id;
         		                });
-      
+
         		return uno[0];
         	});
 
 			return resultado;
 		}
-		
-		
+
+
 	}
-	
+
 	angular.module('app').service('InmuebleService', ['HttpHelper', InmuebleService]);
-	
-	
+
+
 })()
