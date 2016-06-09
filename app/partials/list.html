@@ -11,11 +11,7 @@
     <div class="row">
       <div class="col-xs-4">
         <div class="form-group">
-          <select class="form-control" name="" id="">
-            <option value="-1">Ordenar por</option>
-            <option value="0" selected>Relevancia</option>
-            <option value="1">Precio descendente</option>
-            <option value="2">Precio ascendente</option>
+          <select class="form-control" name="" id="" ng-options="item.name for item in lsctrl.ordenListado track by item.id" ng-model="lsctrl.ordenSelected">
           </select>
         </div>
       </div>
@@ -35,7 +31,7 @@
     </div>
     <!-- Detalle propiedad-->
 
-    <div ng-repeat="item in lsctrl.inmuebles track by item.id">
+    <div ng-repeat="item in lsctrl.inmuebles | orderBy: lsctrl.ordenSelected.jsonAttribute track by item.id">
       <div class="row">
         <div class="col-xs-4">
           <a href="javascript:void(0)">

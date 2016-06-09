@@ -22,9 +22,11 @@
         <script src="/app/services/HttpHelper.js" type="text/javascript"></script>
         <script src="/app/services/InmuebleService.js" type="text/javascript"></script>
 				<script src="/app/controllers/list-controller.js" type="text/javascript"></script>
+				<script src="/app/controllers/header-controller.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<section ui-view class="container-fluid push-top">
+		<div ng-include="'partials/header.html'"></div>
+		<section ui-view class="container push-top">
 
 		</section>
 
