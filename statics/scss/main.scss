@@ -6,5 +6,10 @@ $darkBgColor : #444;
 
 body{
 	background-color:$lightBgColor;
-	
+
+}
+
+nav[class*="navbar-"]{
+	border-radius: 0 !important;
+	margin-bottom: 0;
 }

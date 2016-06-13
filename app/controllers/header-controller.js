@@ -20,4 +20,10 @@ angular.module('app').controller('headerController',function(){
 
   hctrl.ambienteSelected = hctrl.ambiente[0];
 
+  hctrl.superficie = [
+    {name : "Superficie", id:0, jsonAttribute: "surface_total"}
+  ];
+
+  hctrl.superficieSelected = hctrl.superficie[0];
+
 });

@@ -10,7 +10,7 @@ function listController(inmuebleService){
     {name : "Superficie", id:2, jsonAttribute: "surface_total"}
   ];
 
-  lsctrl.ordenSelected = lsctrl.ordenListado[0]
+  lsctrl.ordenSelected = lsctrl.ordenListado[0];
 
   inmuebleService.buscar().then(function(data){
     lsctrl.inmuebles = data;

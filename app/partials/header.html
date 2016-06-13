@@ -1,30 +1,56 @@
-<nav class="navbar navbar-inverse" style="border-radius:0" ng-controller="headerController as hctrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Properati</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
+<span ng-controller="headerController as hctrl">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Properati</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form action="" class="navbar-form navbar-left">
           <div class="form-group">
             <select name="" id="" class="form-control" ng-options="item.name for item in hctrl.operacion track by item.id" ng-model="hctrl.operacionSelected">
             </select>
           </div>
-        </li>
-        <li>
           <div class="form-group">
             <select name="" id="" class="form-control" ng-options="item.name for item in hctrl.ambiente track by item.id" ng-model="hctrl.ambienteSelected">
             </select>
           </div>
-        </li>
-        <li><a href="">Properati</a></li>
-        <li><a href="">Ingresa</a></li>
-      </ul>
+        </form>
+        <ul class="nav navbar-nav">
+          <li><a href="">Properati</a></li>
+          <li><a href="">Ingresa</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <form action="" class="navbar-form navbar-left">
+          <div class="btn-group">
+            <button class="btn btn-primary  "><i class="fa fa-list"></i></button>
+            <button class="btn btn-default"><i class="fa fa-map-marker"></i></button>
+          </div>
+          <div class="form-group">
+            <select name="" id="" class="form-control"
+            ng-model="hctrl.superficieSelected" ng-options="item.name for item in hctrl.superficie track by item.id">
+            </select>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Filtrar por">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+            <select name="" id="" class="form-control"></select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</span>
