@@ -5,9 +5,11 @@ function listController(inmuebleService){
   var lsctrl = this;
 
   lsctrl.ordenListado = [
-    {name : "Precio", id:0, jsonAttribute: "price"},
-    {name : "Direccion", id:1, jsonAttribute: "address_title"},
-    {name : "Superficie", id:2, jsonAttribute: "surface_total"}
+    {name : "Relevancia", id:0, jsonAttribute: " ", reverse: false},
+    {name : "Precio Ascendente", id:1, jsonAttribute: "price", reverse: false},
+    {name : "Precio Descendente", id:2, jsonAttribute: "price", reverse: true},
+    {name : "Fecha", id:3, jsonAttribute: "updated_on", reverse: false},
+    {name : "Superficie", id:4, jsonAttribute: "surface_total", reverse: false}
   ];
 
   lsctrl.ordenSelected = lsctrl.ordenListado[0];

@@ -31,11 +31,12 @@
     </div>
     <!-- Detalle propiedad-->
 
-    <div ng-repeat="item in lsctrl.inmuebles | orderBy: lsctrl.ordenSelected.jsonAttribute track by item.id">
+    <div ng-repeat="item in lsctrl.inmuebles | orderBy : lsctrl.ordenSelected.jsonAttribute : lsctrl.ordenSelected.reverse track by item.id">
       <div class="row">
         <div class="col-xs-4">
           <a href="javascript:void(0)">
-            <img src="/statics/img/mt2000.jpg" alt="" class="img-responsive">
+            <img ng-src="{{item.carousel_main_image}}" alt="" class="img-responsive" ng-if="item.carousel_main_image">
+            <img src="/statics/img/no-img.jpg" alt="" ng-if="!item.carousel_main_image" class="img-responsive">
           </a>
         </div>
         <div class="col-xs-8">
